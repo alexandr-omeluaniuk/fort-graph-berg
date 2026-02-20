@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.module.kotlin.readValue
 import ss.fortberg.httpclient.model.AuthRequest
 import ss.fortberg.httpclient.model.AuthResponse
+import ss.fortberg.util.Externalizator
 import ss.fortberg.util.FBLogger
 import java.net.URI
 import java.net.http.HttpClient
@@ -29,7 +30,7 @@ class KassaTerminal(
 
     private inline fun <reified V> withAuth(payload: Any): V? {
         if (accessToken == null) {
-            accessToken = request<AuthResponse>(AuthRequest(pin = ""))?.token
+            accessToken = request<AuthResponse>(AuthRequest(pin = Externalizator.getPin()))?.token
         }
         return request<V>(payload)
     }
