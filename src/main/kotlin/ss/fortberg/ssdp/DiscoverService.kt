@@ -5,8 +5,13 @@ import io.resourcepool.ssdp.model.DiscoveryListener
 import io.resourcepool.ssdp.model.SsdpRequest
 import io.resourcepool.ssdp.model.SsdpService
 import io.resourcepool.ssdp.model.SsdpServiceAnnouncement
+import ss.fortberg.FBLogger
+import java.util.logging.Level
 
-object DiscoverService {
+/**
+ * Search for iKassa location and start of HTTP client initialization
+ */
+object DiscoverService : FBLogger {
 
     fun discover() {
         val ssdpClient = SsdpClient.create()
@@ -14,18 +19,13 @@ object DiscoverService {
             SsdpRequest.builder().serviceType("ikassa-smartx").build(),
             object : DiscoveryListener {
                 override fun onServiceDiscovered(service: SsdpService) {
-                    println("SERVICE")
-                    println(service)
+                    log.info("Discovered terminal location: " + service.location)
                 }
-
                 override fun onServiceAnnouncement(a: SsdpServiceAnnouncement) {
-                    println("A")
-                    println(a)
+                    log.info("Discovered announcement terminal location: " + a.location)
                 }
-
                 override fun onFailed(err: Exception) {
-                    println("ERROR")
-                    println(err)
+                    log.log(Level.SEVERE, "Discovering error: ${err.message}", err)
                 }
             }
         )
