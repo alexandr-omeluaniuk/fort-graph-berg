@@ -1,5 +1,8 @@
 package ss.fortberg.httpclient
 
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.SerializationFeature
+import com.fasterxml.jackson.module.kotlin.readValue
 import ss.fortberg.FBLogger
 import java.net.URI
 import java.net.http.HttpClient
@@ -13,24 +16,28 @@ import java.util.logging.Level
 class KassaTerminal(
     private val location: String
 ) : FBLogger {
+
+    private val objectMapper = ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
+
     private val rootUrl = "$location/v1"
 
     private var accessToken: String? = null
 
     private val client: HttpClient = HttpClient.newBuilder().build()
 
-    private fun request(payload: String): String? =
+    private inline fun <reified V> request(payload: Any): V? =
         try {
-            log.info("Terminal request:\n$payload")
+            val payloadStr = objectMapper.writeValueAsString(payload)
+            log.info("Terminal request:\n$payloadStr")
             val request = HttpRequest.newBuilder().uri(URI.create(rootUrl))
                 .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(payload))
+                .POST(HttpRequest.BodyPublishers.ofString(payloadStr))
             if (accessToken != null) {
                 request.header("", accessToken)
             }
             val response = client.send(request.build(), HttpResponse.BodyHandlers.ofString())
             log.info("Terminal response [${response.statusCode()}]:\n${response.body()}")
-            response.body()
+            objectMapper.readValue<V>(response.body())
         } catch (e: Exception) {
             log.log(Level.SEVERE, "Terminal request error: ${e.message}", e)
             null
