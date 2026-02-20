@@ -25,8 +25,10 @@ class KassaTerminal(
             val request = HttpRequest.newBuilder().uri(URI.create(rootUrl))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(payload))
-                .build()
-            val response = client.send(request, HttpResponse.BodyHandlers.ofString())
+            if (accessToken != null) {
+                request.header("", accessToken)
+            }
+            val response = client.send(request.build(), HttpResponse.BodyHandlers.ofString())
             log.info("Terminal response [${response.statusCode()}]:\n${response.body()}")
             response.body()
         } catch (e: Exception) {
