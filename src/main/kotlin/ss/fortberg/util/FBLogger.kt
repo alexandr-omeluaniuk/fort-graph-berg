@@ -1,4 +1,4 @@
-package ss.fortberg
+package ss.fortberg.util
 
 import java.util.logging.Logger
 

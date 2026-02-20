@@ -3,9 +3,9 @@ package ss.fortberg.httpclient
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.module.kotlin.readValue
-import ss.fortberg.FBLogger
 import ss.fortberg.httpclient.model.AuthRequest
 import ss.fortberg.httpclient.model.AuthResponse
+import ss.fortberg.util.FBLogger
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest

@@ -5,8 +5,8 @@ import io.resourcepool.ssdp.model.DiscoveryListener
 import io.resourcepool.ssdp.model.SsdpRequest
 import io.resourcepool.ssdp.model.SsdpService
 import io.resourcepool.ssdp.model.SsdpServiceAnnouncement
-import ss.fortberg.FBLogger
 import ss.fortberg.httpclient.KassaTerminal
+import ss.fortberg.util.FBLogger
 import java.util.logging.Level
 
 /**
