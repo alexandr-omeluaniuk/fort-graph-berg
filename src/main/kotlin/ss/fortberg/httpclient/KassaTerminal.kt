@@ -28,28 +28,35 @@ class KassaTerminal(
 
     private val client: HttpClient = HttpClient.newBuilder().build()
 
-    private inline fun <reified V> withAuth(payload: Any): V? {
-        if (accessToken == null) {
-            accessToken = request<AuthResponse>(AuthRequest(pin = Externalizator.getPin()))?.token
-        }
-        return request<V>(payload)
+    fun printControlCheck() {
+        val response: String? = withAuth<String>("CONTROL_TAPE",null)
+        log.info("Control check printing result: $response")
     }
 
-    private inline fun <reified V> request(payload: Any): V? =
+    private inline fun <reified V> withAuth(intent: String, payload: Any?): V? {
+        if (accessToken == null) {
+            accessToken = request<AuthResponse>("AUTH", AuthRequest(pin = Externalizator.getPin()))?.token
+        }
+        return request<V>(intent, payload)
+    }
+
+    private inline fun <reified V> request(intent: String, payload: Any?): V? =
         try {
-            val payloadStr = objectMapper.writeValueAsString(payload)
+            val payloadStr = payload?.let { objectMapper.writeValueAsString(it) } ?: ""
             log.info("Terminal request:\n$payloadStr")
             val request = HttpRequest.newBuilder().uri(URI.create(rootUrl))
                 .header("Content-Type", "application/json")
+                .header("INTENT_OPERATION_TYPE", intent)
                 .POST(HttpRequest.BodyPublishers.ofString(payloadStr))
             if (accessToken != null) {
-                request.header("", accessToken)
+                request.header("Auth-token", accessToken)
             }
             val response = client.send(request.build(), HttpResponse.BodyHandlers.ofString())
             log.info("Terminal response [${response.statusCode()}]:\n${response.body()}")
             objectMapper.readValue<V>(response.body())
         } catch (e: Exception) {
             log.log(Level.SEVERE, "Terminal request error: ${e.message}", e)
+            accessToken = null
             null
         }
 }
