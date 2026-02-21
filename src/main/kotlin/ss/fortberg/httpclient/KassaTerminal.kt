@@ -2,6 +2,7 @@ package ss.fortberg.httpclient
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
+import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.readValue
 import ss.fortberg.httpclient.model.AuthRequest
 import ss.fortberg.httpclient.model.AuthResponse
@@ -21,6 +22,7 @@ class KassaTerminal(
 ) : FBLogger {
 
     private val objectMapper = ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
+        .registerModule(KotlinModule.Builder().build())
 
     private val rootUrl = "$location/v1"
 
@@ -31,6 +33,10 @@ class KassaTerminal(
     fun printControlCheck() {
         val response: String? = withAuth<String>("CONTROL_TAPE",null)
         log.info("Control check printing result: $response")
+    }
+
+    fun getOtherInfo() {
+        withAuth<String>("OTHER_INFO", null)
     }
 
     private inline fun <reified V> withAuth(intent: String, payload: Any?): V? {
@@ -53,7 +59,10 @@ class KassaTerminal(
             }
             val response = client.send(request.build(), HttpResponse.BodyHandlers.ofString())
             log.info("Terminal response [${response.statusCode()}]:\n${response.body()}")
-            objectMapper.readValue<V>(response.body())
+            when {
+                V::class == String::class -> response.body() as V
+                else -> objectMapper.readValue<V>(response.body())
+            }
         } catch (e: Exception) {
             log.log(Level.SEVERE, "Terminal request error: ${e.message}", e)
             accessToken = null

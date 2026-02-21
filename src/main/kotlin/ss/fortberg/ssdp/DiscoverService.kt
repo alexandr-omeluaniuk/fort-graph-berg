@@ -25,7 +25,7 @@ object DiscoverService : FBLogger {
                 override fun onServiceDiscovered(service: SsdpService) {
                     log.info("Discovered terminal location: " + service.location)
                     terminal = KassaTerminal(service.location)
-                    terminal.printControlCheck()
+                    terminal.getOtherInfo()
                 }
                 override fun onServiceAnnouncement(a: SsdpServiceAnnouncement) {
                     log.info("Discovered announcement terminal location: " + a.location)
