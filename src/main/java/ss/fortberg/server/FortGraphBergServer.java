@@ -16,10 +16,11 @@ public class FortGraphBergServer implements FBLogger {
             exchange.sendResponseHeaders(200, 0);
             try (final var is = exchange.getRequestBody()) {
                 final var payload = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-                log.info("Kassa data:\n$payload");
+                log.info("Kassa data:\n" + payload);
             } catch (IOException e) {
                 log.log(Level.SEVERE, "Process request from Electron App failed", e);
             }
+            exchange.close();
         });
         server.start();
         log.info("Server was run on port 19879...");
