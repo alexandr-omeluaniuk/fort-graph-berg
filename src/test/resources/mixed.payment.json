@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/posap/1.0/entity/retaildemand/syncid/9c7c2e00-dc85-4a82-94a3-ceeffb9af913",
+    "type": "retaildemand",
+    "id": "9c7c2e00-dc85-4a82-94a3-ceeffb9af913",
+    "idType": "sync"
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/posap/1.0/entity/retailshift/syncid/2d270230-1d4e-4a38-b956-d7e57ab1f8cc",
+      "type": "retailshift",
+      "id": "2d270230-1d4e-4a38-b956-d7e57ab1f8cc",
+      "idType": "sync"
+    }
+  },
+  "name": "00022",
+  "moment": "2026-02-22 12:21:39",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/posap/1.0/entity/employee/db6bd7f3-6ea2-11eb-0a80-0495001e75b0",
+      "type": "employee",
+      "id": "db6bd7f3-6ea2-11eb-0a80-0495001e75b0",
+      "idType": "native"
+    }
+  },
+  "positions": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/e506972d-737d-11eb-0a80-0346001b53a8",
+          "type": "product",
+          "id": "e506972d-737d-11eb-0a80-0346001b53a8",
+          "idType": "native"
+        }
+      },
+      "quantity": 1,
+      "price": 1200,
+      "discount": 0,
+      "vatEnabled": false
+    }
+  ],
+  "cashSum": 1000,
+  "noCashSum": 200,
+  "qrSum": 0,
+  "environment": {
+    "device": "localhost",
+    "os": "linux",
+    "osname": "Linux 6.17",
+    "osarch": "x64",
+    "osrelease": "6.17.0-14-generic",
+    "version": "4.328.1",
+    "software": {
+      "name": "Касса МойСклад",
+      "vendor": "МойСклад",
+      "version": "4.328.1"
+    }
+  },
+  "cheque": {
+    "fiscal": false,
+    "online": false,
+    "printed": true
+  },
+  "prepaymentCash": 0,
+  "prepaymentNoCash": 0,
+  "prepaymentQrSum": 0
+}

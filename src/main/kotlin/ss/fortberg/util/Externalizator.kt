@@ -19,4 +19,7 @@ object Externalizator : FBLogger {
     }
 
     fun getPin(): String = props.getProperty("pin", "1234")
+
+    fun getMoySkladHomeDir() = props.getProperty("moy.sklad.home.dir")
+        ?: throw IllegalArgumentException("'moy.sklad.home.dir' property is required")
 }
