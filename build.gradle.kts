@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.1.0"
+    id("org.beryx.jlink") version "2.24.1"
     application
 }
 
@@ -25,4 +26,10 @@ kotlin {
 
 application {
     mainClass.set("ss.fortberg.MainKt")
+}
+
+jlink {
+    launcher {
+        name = "Fort GraphBerg"
+    }
 }
