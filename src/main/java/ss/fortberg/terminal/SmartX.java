@@ -16,14 +16,20 @@ import static ss.fortberg.util.JsonUtils.objectMapper;
 
 public class SmartX implements FBLogger {
 
+    private static SmartX current = null;
+
     private final String rootUrl;
 
     private String accessToken;
 
     private final HttpClient client;
 
-    public static SmartX getInstance(String location) throws IOException, InterruptedException {
-        return new SmartX(location);
+    public static void createNew(String location) throws IOException, InterruptedException {
+        current = new SmartX(location);
+    }
+
+    public static SmartX getInstance() {
+        return current;
     }
 
     private SmartX(String location) throws IOException, InterruptedException {
@@ -51,7 +57,7 @@ public class SmartX implements FBLogger {
                 payloadStr = "";
             }
             log.info("Terminal request:\n$payloadStr");
-            final var request = HttpRequest.newBuilder().uri(URI.create(rootUrl))
+            final var request = HttpRequest.newBuilder().uri(URI.create(rootUrl + "/v1"))
                 .header("Content-Type", "application/json")
                 .header("INTENT_OPERATION_TYPE", intent)
                 .POST(HttpRequest.BodyPublishers.ofString(payloadStr));
