@@ -5,7 +5,7 @@ import ss.fortberg.patcher.KassaPatcher
 import ss.fortberg.ssdp.DiscoverService
 
 fun main(args: Array<String>) {
-    FortBergServer.init()
+    FortBergServer().startServer()
     KassaPatcher.patchAll()
     DiscoverService.discover()
 }

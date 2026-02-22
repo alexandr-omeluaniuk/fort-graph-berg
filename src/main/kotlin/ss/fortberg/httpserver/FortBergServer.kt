@@ -7,9 +7,9 @@ import java.net.InetSocketAddress
 import java.nio.charset.StandardCharsets
 
 
-object FortBergServer : FBLogger {
+class FortBergServer : FBLogger {
 
-    fun init() {
+    fun startServer() {
         val server = HttpServer.create(InetSocketAddress(19879), 0)
         server.createContext("/") { exchange: HttpExchange ->
             exchange.sendResponseHeaders(200, 0)
