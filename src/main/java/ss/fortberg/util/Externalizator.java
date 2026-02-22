@@ -15,7 +15,7 @@ public class Externalizator implements FBLogger {
                 props.load(new FileInputStream(propsFile));
                 log.info("External configuration was loaded successfully");
             } else {
-                log.warning("External configuration is not exist: ${propsFile.absolutePath}");
+                log.warning("External configuration is not exist:" + propsFile.getAbsolutePath());
             }
         } catch (Exception e) {
             log.severe("External configuration problem: " + e.getMessage());

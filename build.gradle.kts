@@ -11,7 +11,8 @@ repositories {
 }
 
 dependencies {
-    implementation("com.fasterxml.jackson.module", "jackson-module-kotlin", "2.18.0")
+    implementation("com.fasterxml.jackson.core", "jackson-core", "2.18.0")
+    implementation("com.fasterxml.jackson.core", "jackson-databind", "2.18.0")
     // testImplementation(kotlin("test"))
 }
 
@@ -32,4 +33,6 @@ jlink {
     launcher {
         name = "Fort GraphBerg"
     }
+    jvmVersion = 23
+    javaHome = "/home/alex/.jdks/openjdk-23.0.2"
 }
