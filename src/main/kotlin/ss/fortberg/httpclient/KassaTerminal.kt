@@ -1,13 +1,11 @@
 package ss.fortberg.httpclient
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.SerializationFeature
-import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.readValue
 import ss.fortberg.httpclient.model.AuthRequest
 import ss.fortberg.httpclient.model.AuthResponse
 import ss.fortberg.util.Externalizator
 import ss.fortberg.util.FBLogger
+import ss.fortberg.util.objectMapper
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
@@ -20,9 +18,6 @@ import java.util.logging.Level
 class KassaTerminal(
     private val location: String
 ) : FBLogger {
-
-    private val objectMapper = ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
-        .registerModule(KotlinModule.Builder().build())
 
     private val rootUrl = "$location/v1"
 
