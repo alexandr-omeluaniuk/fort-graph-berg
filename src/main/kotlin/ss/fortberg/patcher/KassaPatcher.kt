@@ -41,7 +41,7 @@ object KassaPatcher : FBLogger {
     private fun patchTerminalJs() {
         val jsFile = File(homeDir, "/resources/app/ikassa.js")
         val content = String(
-            KassaPatcher::class.javaClass.getResourceAsStream("/patch/ikassa.js")!!.readAllBytes(),
+            KassaPatcher::class.java.getResourceAsStream("/patch/ikassa.js")!!.readAllBytes(),
             StandardCharsets.UTF_8
         )
         if (!jsFile.exists() || jsFile.length() != content.length.toLong()) {
@@ -53,8 +53,20 @@ object KassaPatcher : FBLogger {
     }
 
     private fun patchRenderer() {
-
+        val rendererFile = File(homeDir, "/resources/app/renderer.js")
+        val content = Files.readString(rendererFile.toPath())
+        if (content.contains(TERMINAL_INTERCEPTOR_REF)) {
+            log.info("renderer.js already patched... Skip...")
+        } else {
+            val idx = content.indexOf(MAKE_REQUEST_REF) + MAKE_REQUEST_REF.length
+            // insert in the middle
+            val newContent = content.substring(0, idx) + TERMINAL_INTERCEPTOR_REF + content.substring(idx)
+            Files.writeString(rendererFile.toPath(), newContent)
+            log.info("renderer.js successfully patched...")
+        }
     }
 }
 
 private const val TERMINAL_SCRIPT_REF = "<script src=\"./ikassa.js\"></script>"
+private const val MAKE_REQUEST_REF = "makeRequest(data) {"
+private const val TERMINAL_INTERCEPTOR_REF = "\niKassaTerminal.intercept(data);"
