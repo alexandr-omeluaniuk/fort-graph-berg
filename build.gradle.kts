@@ -11,7 +11,6 @@ repositories {
 }
 
 dependencies {
-    implementation("io.resourcepool", "ssdp-client", "2.5.1")
     implementation("com.fasterxml.jackson.module", "jackson-module-kotlin", "2.18.0")
     // testImplementation(kotlin("test"))
 }
@@ -26,7 +25,7 @@ java {
 }
 
 application {
-    mainClass.set("ss.fortberg.MainKt")
+    mainClass.set("ss.fortberg.Main")
 }
 
 jlink {
