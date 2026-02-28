@@ -2,6 +2,7 @@ package ss.fortberg.server;
 
 import com.sun.net.httpserver.HttpServer;
 import ss.fortberg.server.model.RetailInfo;
+import ss.fortberg.storage.DataStorage;
 import ss.fortberg.util.FBLogger;
 import ss.fortberg.util.JsonUtils;
 
@@ -21,6 +22,7 @@ public class FortGraphBergServer implements FBLogger {
                 log.info("MoySklad retail:\n" + payload);
                 final RetailInfo retailInfo = JsonUtils.objectMapper.readValue(payload, RetailInfo.class);
                 log.info(retailInfo.toString());
+                DataStorage.getInstance().setCashiers(retailInfo);
             } catch (IOException e) {
                 log.log(Level.SEVERE, "Process request from Electron App failed", e);
             }
