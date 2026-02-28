@@ -1,16 +1,22 @@
 package ss.fortberg.terminal;
 
 import ss.fortberg.server.model.SaleRequest;
+import ss.fortberg.storage.DataStorage;
 import ss.fortberg.terminal.model.AuthRequest;
 import ss.fortberg.terminal.model.AuthResponse;
+import ss.fortberg.terminal.model.Sale;
+import ss.fortberg.terminal.model.SaleItem;
 import ss.fortberg.util.Externalizator;
 import ss.fortberg.util.FBLogger;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 import java.util.logging.Level;
 
 import static ss.fortberg.util.JsonUtils.objectMapper;
@@ -40,7 +46,20 @@ public class SmartX implements FBLogger {
 
 
     public void sale(SaleRequest request) {
-
+        final var cashier = DataStorage.getInstance().getCashier(request.owner().meta().id());
+        final var cash = new BigDecimal(request.cashSum() / 100).setScale(2, RoundingMode.HALF_UP);
+        final var cashless = new BigDecimal(request.noCashSum() / 100).setScale(2, RoundingMode.HALF_UP);
+        final var sale = new Sale(
+            cashier == null ? "Кассир" : cashier.lastname(),
+            new ArrayList<SaleItem>(),
+            cash,
+            cashless,
+            new BigDecimal(0),
+            new BigDecimal(0),
+            "",
+            ""
+        );
+        log.info("Sale: " + sale);
     }
 
     private <T> T withAuth(String intent, Object payload, Class<T> responseType) {
