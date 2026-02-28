@@ -30,6 +30,10 @@ public class DataStorage implements FBLogger {
         return cashiersMap.get(id);
     }
 
+    public Product getProduct(String id) {
+        return productsMap.get(id);
+    }
+
     public void setCashiers(RetailInfo info) {
         final var newData = info.cashiers().rows().stream().map(raw ->
             new Cashier(raw.lastName(), raw.meta().id())

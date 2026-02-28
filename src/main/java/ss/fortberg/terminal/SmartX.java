@@ -16,7 +16,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.ArrayList;
+import java.util.Objects;
 import java.util.logging.Level;
 
 import static ss.fortberg.util.JsonUtils.objectMapper;
@@ -44,14 +44,29 @@ public class SmartX implements FBLogger {
         client = HttpClient.newBuilder().build();
     }
 
-
     public void sale(SaleRequest request) {
-        final var cashier = DataStorage.getInstance().getCashier(request.owner().meta().id());
+        final var ds = DataStorage.getInstance();
+        final var cashier = ds.getCashier(request.owner().meta().id());
         final var cash = new BigDecimal(request.cashSum() / 100).setScale(2, RoundingMode.HALF_UP);
         final var cashless = new BigDecimal(request.noCashSum() / 100).setScale(2, RoundingMode.HALF_UP);
         final var sale = new Sale(
             cashier == null ? "Кассир" : cashier.lastname(),
-            new ArrayList<SaleItem>(),
+            request.positions().stream().map(pos -> {
+                final var product = ds.getProduct(pos.assortment().meta().id());
+                if (product == null) {
+                    return null;
+                } else {
+                    final var price = BigDecimal.valueOf(pos.price() / 100).setScale(2, RoundingMode.HALF_UP);
+                    return new SaleItem(
+                        product.name(),
+                        product.code(),
+                        price,
+                        new BigDecimal(pos.quantity()),
+                        true,
+                        new BigDecimal(pos.discount())
+                    );
+                }
+            }).filter(Objects::nonNull).toList(),
             cash,
             cashless,
             new BigDecimal(0),
@@ -59,7 +74,9 @@ public class SmartX implements FBLogger {
             "",
             ""
         );
-        log.info("Sale: " + sale);
+        log.info("Sale request: " + sale);
+        final var response = withAuth("SALE", sale, String.class);
+        log.info("Sale response: " + response);
     }
 
     private <T> T withAuth(String intent, Object payload, Class<T> responseType) {
