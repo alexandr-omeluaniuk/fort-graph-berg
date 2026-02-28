@@ -7,7 +7,7 @@ import ss.fortberg.util.FBLogger;
 public class SsdpDiscovery implements FBLogger {
 
     public static void start() {
-        log.info("Starting...");
+        log.info("Starting terminal discovery...");
         final var ssdpClient = SsdpClient.create();
         ssdpClient.discoverServices(
             SsdpRequest.builder().serviceType("ikassa-smartx").build(),

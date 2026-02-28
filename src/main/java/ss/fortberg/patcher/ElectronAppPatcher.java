@@ -17,9 +17,11 @@ public class ElectronAppPatcher implements FBLogger {
 
     public static void patchAll() throws IOException {
         final var homeDir = Externalizator.getMoySkladHomeDir();
-        patchIndexHtml(homeDir);
-        patchTerminalJs(homeDir);
-        patchRenderer(homeDir);
+        if (homeDir != null && !homeDir.isBlank()) {
+            patchIndexHtml(homeDir);
+            patchTerminalJs(homeDir);
+            patchRenderer(homeDir);
+        }
     }
 
     private static void patchIndexHtml(String homeDir) throws IOException {
