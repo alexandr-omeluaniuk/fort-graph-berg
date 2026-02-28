@@ -1,5 +1,6 @@
 package ss.fortberg.terminal;
 
+import ss.fortberg.server.model.SaleRequest;
 import ss.fortberg.terminal.model.AuthRequest;
 import ss.fortberg.terminal.model.AuthResponse;
 import ss.fortberg.util.Externalizator;
@@ -35,6 +36,11 @@ public class SmartX implements FBLogger {
     private SmartX(String location) throws IOException, InterruptedException {
         rootUrl = location;
         client = HttpClient.newBuilder().build();
+    }
+
+
+    public void sale(SaleRequest request) {
+
     }
 
     private <T> T withAuth(String intent, Object payload, Class<T> responseType) {
