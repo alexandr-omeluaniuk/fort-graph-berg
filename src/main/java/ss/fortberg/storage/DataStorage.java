@@ -1,7 +1,9 @@
 package ss.fortberg.storage;
 
+import ss.fortberg.server.model.Assortment;
 import ss.fortberg.server.model.RetailInfo;
 import ss.fortberg.storage.model.Cashier;
+import ss.fortberg.storage.model.Product;
 import ss.fortberg.util.FBLogger;
 
 import java.util.Map;
@@ -14,6 +16,8 @@ public class DataStorage implements FBLogger {
     private DataStorage() {}
 
     private Map<String, Cashier> cashiersMap = new ConcurrentHashMap<>();
+
+    private Map<String, Product> productsMap = new ConcurrentHashMap<>();
 
     public static DataStorage getInstance() {
         if (storage == null) {
@@ -29,5 +33,13 @@ public class DataStorage implements FBLogger {
         cashiersMap.clear();
         newData.forEach(item -> cashiersMap.put(item.id(), item));
         log.info("Cashiers added: " + newData.toString());
+    }
+
+    public void setProducts(Assortment assortment) {
+        productsMap.clear();
+        assortment.rows().forEach(item -> {
+            productsMap.put(item.id(), item);
+        });
+        log.info("Products added: " + assortment.rows().toString());
     }
 }
