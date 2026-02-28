@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/posap/1.0/entity/retailstore/db8712de-6ea2-11eb-0a80-0495001e7603",
+    "mediaType": "application/json",
+    "type": "retailstore",
+    "id": "db8712de-6ea2-11eb-0a80-0495001e7603",
+    "idType": "native"
+  },
+  "id": "db8712de-6ea2-11eb-0a80-0495001e7603",
+  "name": "Точка продаж",
+  "version": 0,
+  "updated": "2021-02-14 11:58:51",
+  "externalCode": "NMhzkL44jjiJqq4tztQXQ2",
+  "controlShippingStock": false,
+  "controlCashierChoice": false,
+  "discountEnable": true,
+  "discountMaxPercent": 100.0,
+  "priceType": "Цена продажи",
+  "authTokenAttached": true,
+  "cashiers": {
+    "rows": [
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/employee/db6bd7f3-6ea2-11eb-0a80-0495001e75b0",
+          "mediaType": "application/json",
+          "type": "employee",
+          "id": "db6bd7f3-6ea2-11eb-0a80-0495001e75b0",
+          "idType": "native"
+        },
+        "uid": "admin@starshistrelok",
+        "lastName": "Alexandr",
+        "email": "starshi.strelok@mail.ru"
+      }
+    ]
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/posap/1.0/entity/organization/db7c3aac-6ea2-11eb-0a80-0495001e75ec",
+      "mediaType": "application/json",
+      "type": "organization",
+      "id": "db7c3aac-6ea2-11eb-0a80-0495001e75ec",
+      "idType": "native"
+    },
+    "name": "starshistrelok",
+    "companyType": "legal",
+    "legalTitle": "starshistrelok",
+    "isEgaisEnable": false,
+    "payerVat": true,
+    "useCompanyVat": false,
+    "kktToken": null
+  },
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/posap/1.0/entity/store/db7da776-6ea2-11eb-0a80-0495001e75ee",
+      "mediaType": "application/json",
+      "type": "store",
+      "id": "db7da776-6ea2-11eb-0a80-0495001e75ee",
+      "idType": "native"
+    },
+    "name": "Основной склад",
+    "pathName": "",
+    "address": ""
+  },
+  "lastOperationNames": [
+    {
+      "entity": "retaildemand",
+      "name": "00032",
+      "moment": "2026-02-22 21:35:00"
+    },
+    {
+      "entity": "retaildrawercashin",
+      "name": "00000",
+      "moment": "2026-02-28 19:10:45"
+    },
+    {
+      "entity": "retaildrawercashout",
+      "name": "00000",
+      "moment": "2026-02-28 19:10:45"
+    },
+    {
+      "entity": "retailsalesreturn",
+      "name": "00000",
+      "moment": "2026-02-28 19:10:45"
+    },
+    {
+      "entity": "retailshift",
+      "name": "00001",
+      "moment": "2026-01-19 20:54:00"
+    },
+    {
+      "entity": "prepayment",
+      "name": "00000",
+      "moment": "2026-02-28 19:10:45"
+    },
+    {
+      "entity": "prepaymentreturn",
+      "name": "00000",
+      "moment": "2026-02-28 19:10:45"
+    },
+    {
+      "entity": "advancepayment",
+      "name": "00000",
+      "moment": "2026-02-28 19:10:45"
+    },
+    {
+      "entity": "advancepaymentreturn",
+      "name": "00000",
+      "moment": "2026-02-28 19:10:45"
+    }
+  ],
+  "egaisEnabled": false,
+  "frNumber": null,
+  "returnFromClosedShiftEnabled": false,
+  "alwaysPrintCheck": false,
+  "issueOrders": false,
+  "sellReserves": false,
+  "ofdEnabled": true,
+  "allowCustomPrice": true,
+  "cash": 11600.0,
+  "createPaymentInOnRetailShiftClosing": true,
+  "createCashInOnRetailShiftClosing": true,
+  "allowCreateProducts": true,
+  "allowCreateReturnWithoutDemand": false,
+  "requiredFio": false,
+  "requiredPhone": false,
+  "requiredEmail": false,
+  "requiredBirthdate": false,
+  "requiredSex": false,
+  "requiredDiscountCardNumber": false,
+  "allowDeleteReceiptPositions": true,
+  "syncAgents": true,
+  "showBeerOnTap": false,
+  "marksCheckMode": "CORRECT_MARKS_ONLY",
+  "allowNonFiscalTransactions": false,
+  "isOnlineDiscount": false,
+  "isExternalCustomers": false,
+  "reservePrepaidGoods": false,
+  "environment": {
+    "device": "localhost",
+    "os": "linux",
+    "osname": "Linux 6.17",
+    "osarch": "x64",
+    "osrelease": "6.17.0-14-generic",
+    "software": {
+      "name": "Касса МойСклад",
+      "vendor": "МойСклад",
+      "version": "4.328.1"
+    }
+  },
+  "state": {
+    "sync": {
+      "lastAttempMoment": "2026-02-28 19:04:00"
+    },
+    "lastCheckMoment": "2026-02-28 19:04:00"
+  },
+  "tobaccoMrcControlType": "SAME_PRICE",
+  "enableNotMRCTobaccoSale": false,
+  "markingSellingMode": "CORRECT_MARKS_ONLY",
+  "fiscalType": "STANDARD",
+  "qrPayEnabled": false,
+  "sendMarksForCheck": false,
+  "sendMarksToChestnyZnak": true,
+  "sendMarksToChestnyZnakOnCloud": false,
+  "testChestnyZnakMode": true,
+  "advancePaymentEnabled": false,
+  "autoPrintNonFiscal": false,
+  "autoPrintFiscal": false,
+  "markingEnabled": true,
+  "offlineSaleMode": "ONLINE",
+  "allowExpenseReceipt": false,
+  "giftCardsEnabled": false
+}

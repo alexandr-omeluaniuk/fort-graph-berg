@@ -3,7 +3,18 @@ class iKassaTerminal {
     static intercept(data, response) {
         new Promise(async (resolve, reject) => {
             try {
-                if (data.url.indexOf('/api/posap/1.0/entity/assortment') !== -1) {
+                if (data.url.indexOf('/api/posap/1.0/settings/retailstore') !== -1) {
+                    const txt = await response.text();
+                    fetch('http://localhost:19879/retail', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: txt
+                    }).then(resp => {
+                        console.log(resp.status);
+                    });
+                } else if (data.url.indexOf('/api/posap/1.0/entity/assortment') !== -1) {
                     const txt = await response.text();
                     fetch('http://localhost:19879/products', {
                         method: "POST",
@@ -14,8 +25,7 @@ class iKassaTerminal {
                     }).then(resp => {
                         console.log(resp.status);
                     });
-                }
-                if (data.url.indexOf('/api/posap/1.0/entity/retaildemand') !== -1 && data.method === 'POST') {
+                } else if (data.url.indexOf('/api/posap/1.0/entity/retaildemand') !== -1 && data.method === 'POST') {
                     fetch('http://localhost:19879/sale', {
                         method: "POST",
                         headers: {
