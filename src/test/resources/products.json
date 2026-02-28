@@ -1,0 +1,894 @@
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/posap/1.0/entity/assortment?limit=5000",
+    "mediaType": "application/json",
+    "size": 17,
+    "limit": 5000,
+    "offsetId": "00000000-0000-0000-0000-000000000000",
+    "direction": "forward"
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/0e5ee1b0-7377-11eb-0a80-0259001a76c5",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "0e5ee1b0-7377-11eb-0a80-0259001a76c5",
+        "idType": "native"
+      },
+      "id": "0e5ee1b0-7377-11eb-0a80-0259001a76c5",
+      "name": "Баклажаны Длинный пурпурный 0.15г",
+      "code": "00005",
+      "barcodes": [
+        "2000000000060"
+      ],
+      "salePrices": [
+        {
+          "value": 600.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/0bd466df-6f8d-11eb-0a80-0078002f3e8c",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "0bd466df-6f8d-11eb-0a80-0078002f3e8c",
+          "idType": "native"
+        },
+        "id": "0bd466df-6f8d-11eb-0a80-0078002f3e8c",
+        "name": "Баклажан",
+        "namepath": "Овощные культуры/Баклажан",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/0bd466df-6f8d-11eb-0a80-0078002f3e8c/"
+      },
+      "favorite": false,
+      "uom": "шт",
+      "image": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/download/b321973a-b372-47f9-b846-1d5302174651",
+        "miniature": "https://online.moysklad.ru/api/posap/1.0/download/b321973a-b372-47f9-b846-1d5302174651?miniature=true",
+        "tiny": "https://tinyimage-prod.moysklad.ru/static/tinyimage/db55b933-6ea2-11eb-0a80-06f40000f665/tinyimage/f662e927-7c1b-46d1-969a-9bd8b05dafda/t.png"
+      },
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": 0.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/114a783a-7373-11eb-0a80-07ad001bdb94",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "114a783a-7373-11eb-0a80-07ad001bdb94",
+        "idType": "native"
+      },
+      "id": "114a783a-7373-11eb-0a80-07ad001bdb94",
+      "name": "Абруз Астраханский",
+      "code": "00004",
+      "barcodes": [
+        "2000000000053"
+      ],
+      "salePrices": [
+        {
+          "value": 1400.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "idType": "native"
+        },
+        "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+        "name": "Арбузы",
+        "namepath": "Овощные культуры/Арбузы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/03897cf9-6f8d-11eb-0a80-09f4003248a0/"
+      },
+      "favorite": false,
+      "uom": "шт",
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": -8.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/416afeb0-8418-11eb-0a80-047300132b96",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "416afeb0-8418-11eb-0a80-047300132b96",
+        "idType": "native"
+      },
+      "id": "416afeb0-8418-11eb-0a80-047300132b96",
+      "name": "Минеральные удобрения Yara Кристалон Особый 0,5 кг",
+      "code": "00027",
+      "barcodes": [
+        "2000000000305"
+      ],
+      "salePrices": [
+        {
+          "value": 590.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/e7281653-6f8c-11eb-0a80-06f100305ef8",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "e7281653-6f8c-11eb-0a80-06f100305ef8",
+          "idType": "native"
+        },
+        "id": "e7281653-6f8c-11eb-0a80-06f100305ef8",
+        "name": "Удобрения",
+        "namepath": "Удобрения",
+        "path": "/e7281653-6f8c-11eb-0a80-06f100305ef8/"
+      },
+      "favorite": false,
+      "image": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/download/9e5cc91b-124d-4840-bfa7-8d862c70c63c",
+        "miniature": "https://online.moysklad.ru/api/posap/1.0/download/9e5cc91b-124d-4840-bfa7-8d862c70c63c?miniature=true",
+        "tiny": "https://tinyimage-prod.moysklad.ru/static/tinyimage/db55b933-6ea2-11eb-0a80-06f40000f665/tinyimage/a3018c5f-54b1-4ca7-961d-abcf53dc34ee/t.png"
+      },
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": 0.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/43d74d95-8018-11eb-0a80-07f6002710e6",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "43d74d95-8018-11eb-0a80-07f6002710e6",
+        "idType": "native"
+      },
+      "id": "43d74d95-8018-11eb-0a80-07f6002710e6",
+      "name": "Супер бобы",
+      "code": "00021",
+      "barcodes": [
+        "2000000000237"
+      ],
+      "salePrices": [
+        {
+          "value": 1200.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/142c7762-6f8d-11eb-0a80-03610030d506",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "142c7762-6f8d-11eb-0a80-03610030d506",
+          "idType": "native"
+        },
+        "id": "142c7762-6f8d-11eb-0a80-03610030d506",
+        "name": "Бобы",
+        "namepath": "Овощные культуры/Бобы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/142c7762-6f8d-11eb-0a80-03610030d506/"
+      },
+      "favorite": false,
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": 0.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/6809f6bf-6f8d-11eb-0a80-09f400325d6d",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "6809f6bf-6f8d-11eb-0a80-09f400325d6d",
+        "idType": "native"
+      },
+      "id": "6809f6bf-6f8d-11eb-0a80-09f400325d6d",
+      "name": "Арбуз Астраханский 10шт",
+      "code": "00001",
+      "barcodes": [
+        "2000000000022"
+      ],
+      "salePrices": [
+        {
+          "value": 100.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "idType": "native"
+        },
+        "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+        "name": "Арбузы",
+        "namepath": "Овощные культуры/Арбузы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/03897cf9-6f8d-11eb-0a80-09f4003248a0/"
+      },
+      "favorite": false,
+      "uom": "шт",
+      "image": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/download/931605bd-f5b1-4c3b-8b23-038ff071af3b",
+        "miniature": "https://online.moysklad.ru/api/posap/1.0/download/931605bd-f5b1-4c3b-8b23-038ff071af3b?miniature=true",
+        "tiny": "https://tinyimage-prod.moysklad.ru/static/tinyimage/db55b933-6ea2-11eb-0a80-06f40000f665/tinyimage/c379f9f7-3e09-467a-b5c7-a56ef96dc215/t.png"
+      },
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": -13.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/7a4fec8f-746d-11eb-0a80-00ab0024d446",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "7a4fec8f-746d-11eb-0a80-00ab0024d446",
+        "idType": "native"
+      },
+      "id": "7a4fec8f-746d-11eb-0a80-00ab0024d446",
+      "name": "Огурцы Ансор F1 7шт",
+      "code": "00017",
+      "barcodes": [
+        "2000000000183"
+      ],
+      "salePrices": [
+        {
+          "value": 125.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/62a768d1-746d-11eb-0a80-07ad0027bf24",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "62a768d1-746d-11eb-0a80-07ad0027bf24",
+          "idType": "native"
+        },
+        "id": "62a768d1-746d-11eb-0a80-07ad0027bf24",
+        "name": "Орурцы",
+        "namepath": "Овощные культуры/Орурцы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/62a768d1-746d-11eb-0a80-07ad0027bf24/"
+      },
+      "favorite": false,
+      "uom": "шт",
+      "image": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/download/8691df62-dd50-42a8-a20b-e574bb29e5fa",
+        "miniature": "https://online.moysklad.ru/api/posap/1.0/download/8691df62-dd50-42a8-a20b-e574bb29e5fa?miniature=true",
+        "tiny": "https://tinyimage-prod.moysklad.ru/static/tinyimage/db55b933-6ea2-11eb-0a80-06f40000f665/tinyimage/03907dad-37c2-4a43-8f6d-a7a2c324b700/t.png"
+      },
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": 0.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/7aec52aa-835b-11eb-0a80-0581000a5aa8",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "7aec52aa-835b-11eb-0a80-0581000a5aa8",
+        "idType": "native"
+      },
+      "id": "7aec52aa-835b-11eb-0a80-0581000a5aa8",
+      "name": "Баклажан Большой",
+      "code": "00023",
+      "barcodes": [
+        "2000000000251"
+      ],
+      "salePrices": [
+        {
+          "value": 1200.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/0bd466df-6f8d-11eb-0a80-0078002f3e8c",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "0bd466df-6f8d-11eb-0a80-0078002f3e8c",
+          "idType": "native"
+        },
+        "id": "0bd466df-6f8d-11eb-0a80-0078002f3e8c",
+        "name": "Баклажан",
+        "namepath": "Овощные культуры/Баклажан",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/0bd466df-6f8d-11eb-0a80-0078002f3e8c/"
+      },
+      "favorite": false,
+      "article": "7000",
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": 0.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/7bb5e08d-7350-11eb-0a80-091200159171",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "7bb5e08d-7350-11eb-0a80-091200159171",
+        "idType": "native"
+      },
+      "id": "7bb5e08d-7350-11eb-0a80-091200159171",
+      "name": "Арбуз Кримсон свит 10шт",
+      "code": "00002",
+      "barcodes": [
+        "2000000000039"
+      ],
+      "salePrices": [
+        {
+          "value": 3300.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "idType": "native"
+        },
+        "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+        "name": "Арбузы",
+        "namepath": "Овощные культуры/Арбузы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/03897cf9-6f8d-11eb-0a80-09f4003248a0/"
+      },
+      "favorite": false,
+      "uom": "шт",
+      "image": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/download/881a7220-171c-47f8-ae57-4197f1620071",
+        "miniature": "https://online.moysklad.ru/api/posap/1.0/download/881a7220-171c-47f8-ae57-4197f1620071?miniature=true",
+        "tiny": "https://tinyimage-prod.moysklad.ru/static/tinyimage/db55b933-6ea2-11eb-0a80-06f40000f665/tinyimage/aa8d66a2-894a-4819-b972-ba27b0dceeca/t.png"
+      },
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": -2.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/938c131c-737d-11eb-0a80-0456001c6333",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "938c131c-737d-11eb-0a80-0456001c6333",
+        "idType": "native"
+      },
+      "id": "938c131c-737d-11eb-0a80-0456001c6333",
+      "name": "Apбуз Королевский",
+      "code": "00006",
+      "barcodes": [
+        "2000000000077"
+      ],
+      "salePrices": [
+        {
+          "value": 100.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "idType": "native"
+        },
+        "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+        "name": "Арбузы",
+        "namepath": "Овощные культуры/Арбузы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/03897cf9-6f8d-11eb-0a80-09f4003248a0/"
+      },
+      "favorite": false,
+      "article": "6000",
+      "uom": "шт",
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": -1.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/9fef8620-737d-11eb-0a80-0621001c3dba",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "9fef8620-737d-11eb-0a80-0621001c3dba",
+        "idType": "native"
+      },
+      "id": "9fef8620-737d-11eb-0a80-0621001c3dba",
+      "name": "Арбуз Кавказский Сладкий",
+      "code": "00007",
+      "barcodes": [
+        "2000000000084"
+      ],
+      "salePrices": [
+        {
+          "value": 1200.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "idType": "native"
+        },
+        "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+        "name": "Арбузы",
+        "namepath": "Овощные культуры/Арбузы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/03897cf9-6f8d-11eb-0a80-09f4003248a0/"
+      },
+      "favorite": false,
+      "uom": "шт",
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": 0.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/a4a5284f-7ddf-11eb-0a80-0844000de282",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "a4a5284f-7ddf-11eb-0a80-0844000de282",
+        "idType": "native"
+      },
+      "id": "a4a5284f-7ddf-11eb-0a80-0844000de282",
+      "name": "Кактус",
+      "code": "00020",
+      "barcodes": [
+        "2000000000220"
+      ],
+      "salePrices": [
+        {
+          "value": 2500.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/0611324a-7139-11eb-0a80-090500105ae0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "0611324a-7139-11eb-0a80-090500105ae0",
+          "idType": "native"
+        },
+        "id": "0611324a-7139-11eb-0a80-090500105ae0",
+        "name": "Комнатные",
+        "namepath": "Цветочные культуры/Комнатные",
+        "path": "/d54bea1b-6f8c-11eb-0a80-051f002e401f/0611324a-7139-11eb-0a80-090500105ae0/"
+      },
+      "favorite": false,
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": 0.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/b6c0f266-8417-11eb-0a80-0581001349ed",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "b6c0f266-8417-11eb-0a80-0581001349ed",
+        "idType": "native"
+      },
+      "id": "b6c0f266-8417-11eb-0a80-0581001349ed",
+      "name": "Минеральные удобрения Yara Кристалон Коричневый 0,5 кг",
+      "code": "00024",
+      "barcodes": [
+        "2000000000275"
+      ],
+      "salePrices": [
+        {
+          "value": 590.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/e7281653-6f8c-11eb-0a80-06f100305ef8",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "e7281653-6f8c-11eb-0a80-06f100305ef8",
+          "idType": "native"
+        },
+        "id": "e7281653-6f8c-11eb-0a80-06f100305ef8",
+        "name": "Удобрения",
+        "namepath": "Удобрения",
+        "path": "/e7281653-6f8c-11eb-0a80-06f100305ef8/"
+      },
+      "favorite": false,
+      "image": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/download/1a52b209-d817-46f4-9067-c5b3842b767c",
+        "miniature": "https://online.moysklad.ru/api/posap/1.0/download/1a52b209-d817-46f4-9067-c5b3842b767c?miniature=true",
+        "tiny": "https://tinyimage-prod.moysklad.ru/static/tinyimage/db55b933-6ea2-11eb-0a80-06f40000f665/tinyimage/b5994c8d-6dab-4d51-adab-f87efd568ee1/t.png"
+      },
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": 0.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/be65848c-737d-11eb-0a80-0456001c668e",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "be65848c-737d-11eb-0a80-0456001c668e",
+        "idType": "native"
+      },
+      "id": "be65848c-737d-11eb-0a80-0456001c668e",
+      "name": "Арбуз 6",
+      "code": "00010",
+      "barcodes": [
+        "2000000000114"
+      ],
+      "salePrices": [
+        {
+          "value": 600.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "idType": "native"
+        },
+        "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+        "name": "Арбузы",
+        "namepath": "Овощные культуры/Арбузы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/03897cf9-6f8d-11eb-0a80-09f4003248a0/"
+      },
+      "favorite": false,
+      "uom": "шт",
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": -9.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/d423750a-737d-11eb-0a80-00ab001afd08",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "d423750a-737d-11eb-0a80-00ab001afd08",
+        "idType": "native"
+      },
+      "id": "d423750a-737d-11eb-0a80-00ab001afd08",
+      "name": "Арбуз 9",
+      "code": "00013",
+      "barcodes": [
+        "2000000000145"
+      ],
+      "salePrices": [
+        {
+          "value": 900.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "idType": "native"
+        },
+        "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+        "name": "Арбузы",
+        "namepath": "Овощные культуры/Арбузы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/03897cf9-6f8d-11eb-0a80-09f4003248a0/"
+      },
+      "favorite": false,
+      "uom": "шт",
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": -3.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/d98a30a7-8359-11eb-0a80-04730009f1a1",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "d98a30a7-8359-11eb-0a80-04730009f1a1",
+        "idType": "native"
+      },
+      "id": "d98a30a7-8359-11eb-0a80-04730009f1a1",
+      "name": "Арбуз Украинский",
+      "code": "00022",
+      "barcodes": [
+        "2000000000244"
+      ],
+      "salePrices": [
+        {
+          "value": 2000.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "idType": "native"
+        },
+        "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+        "name": "Арбузы",
+        "namepath": "Овощные культуры/Арбузы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/03897cf9-6f8d-11eb-0a80-09f4003248a0/"
+      },
+      "favorite": false,
+      "article": "9000",
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": 0.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/e03e9127-7351-11eb-0a80-07ad0016ec22",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "e03e9127-7351-11eb-0a80-07ad0016ec22",
+        "idType": "native"
+      },
+      "id": "e03e9127-7351-11eb-0a80-07ad0016ec22",
+      "name": "Арбуз Сахарный малыш 10шт",
+      "code": "00003",
+      "barcodes": [
+        "2000000000046"
+      ],
+      "salePrices": [
+        {
+          "value": 5500.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "idType": "native"
+        },
+        "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+        "name": "Арбузы",
+        "namepath": "Овощные культуры/Арбузы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/03897cf9-6f8d-11eb-0a80-09f4003248a0/"
+      },
+      "favorite": false,
+      "uom": "шт",
+      "image": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/download/6e2b3e91-35af-4c8a-a79e-e1fee953db28",
+        "miniature": "https://online.moysklad.ru/api/posap/1.0/download/6e2b3e91-35af-4c8a-a79e-e1fee953db28?miniature=true",
+        "tiny": "https://tinyimage-prod.moysklad.ru/static/tinyimage/db55b933-6ea2-11eb-0a80-06f40000f665/tinyimage/f1186da9-bee8-4421-a65f-5fe6cf4356d2/t.png"
+      },
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": -1.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/posap/1.0/entity/product/e506972d-737d-11eb-0a80-0346001b53a8",
+        "mediaType": "application/json",
+        "type": "product",
+        "id": "e506972d-737d-11eb-0a80-0346001b53a8",
+        "idType": "native"
+      },
+      "id": "e506972d-737d-11eb-0a80-0346001b53a8",
+      "name": "Арбуз 12",
+      "code": "00016",
+      "barcodes": [
+        "2000000000176"
+      ],
+      "salePrices": [
+        {
+          "value": 1200.0,
+          "priceType": "Цена продажи"
+        }
+      ],
+      "productFolder": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/posap/1.0/entity/productfolder/03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "mediaType": "application/json",
+          "type": "productfolder",
+          "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+          "idType": "native"
+        },
+        "id": "03897cf9-6f8d-11eb-0a80-09f4003248a0",
+        "name": "Арбузы",
+        "namepath": "Овощные культуры/Арбузы",
+        "path": "/c8002b6a-6f8c-11eb-0a80-0771002f3810/03897cf9-6f8d-11eb-0a80-09f4003248a0/"
+      },
+      "favorite": false,
+      "uom": "шт",
+      "egaisIsAlcoholic": false,
+      "egaisHasExciseMark": false,
+      "egaisVolume": 0.0,
+      "egaisAlcoholPercent": 0.0,
+      "soldByWeight": false,
+      "onTap": false,
+      "tobacco": false,
+      "trackingType": "NOT_TRACKED",
+      "stock": 19.0,
+      "reserve": 0.0,
+      "isSerialTrackable": false,
+      "paymentItemType": "GOOD",
+      "isDiscountProhibited": false,
+      "useParentVat": true
+    }
+  ]
+}

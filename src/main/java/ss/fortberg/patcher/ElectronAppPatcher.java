@@ -13,7 +13,8 @@ public class ElectronAppPatcher implements FBLogger {
 
     private static final String TERMINAL_SCRIPT_REF = "<script src=\"./ikassa.js\"></script>";
     private static final String MAKE_REQUEST_REF = "makeRequest(data) {";
-    private static final String TERMINAL_INTERCEPTOR_REF = "\niKassaTerminal.intercept(data);";
+    private static final String TERMINAL_RESPONSE_INTERCEPTOR_REF = "iKassaTerminal.intercept(data, response.clone());\n\t\t\t\t";
+    private static final String RETURN_RESPONSE_REF = "return response;";
 
     public static void patchAll() throws IOException {
         final var homeDir = Externalizator.getMoySkladHomeDir();
@@ -56,12 +57,14 @@ public class ElectronAppPatcher implements FBLogger {
     private static void patchRenderer(String homeDir) throws IOException {
         final var rendererFile = new File(homeDir, "/resources/app/renderer.js");
         final var content = Files.readString(rendererFile.toPath());
-        if (content.contains(TERMINAL_INTERCEPTOR_REF)) {
+        if (content.contains(TERMINAL_RESPONSE_INTERCEPTOR_REF)) {
             log.info("renderer.js already patched... Skip...");
         } else {
-            final var idx = content.indexOf(MAKE_REQUEST_REF) + MAKE_REQUEST_REF.length();
+            final var idx = content.indexOf(MAKE_REQUEST_REF);
+            final var secondPart = content.substring(idx);
+            final var idx2 = idx + secondPart.indexOf(RETURN_RESPONSE_REF);
             // insert in the middle
-            final var newContent = content.substring(0, idx) + TERMINAL_INTERCEPTOR_REF + content.substring(idx);
+            final var newContent = content.substring(0, idx2) + TERMINAL_RESPONSE_INTERCEPTOR_REF + content.substring(idx2);
             Files.writeString(rendererFile.toPath(), newContent);
             log.info("renderer.js successfully patched...");
         }

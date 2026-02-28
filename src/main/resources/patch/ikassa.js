@@ -5,12 +5,18 @@ class iKassaTerminal {
             try {
                 if (data.url.indexOf('/api/posap/1.0/entity/assortment') !== -1) {
                     const txt = await response.text();
-                    console.log(txt);
+                    fetch('http://localhost:19879/products', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: txt
+                    }).then(resp => {
+                        console.log(resp.status);
+                    });
                 }
                 if (data.url.indexOf('/api/posap/1.0/entity/retaildemand') !== -1 && data.method === 'POST') {
-                    // const payment = JSON.parse(data.body);
-                    // console.log(payment);
-                    fetch('http://localhost:19879', {
+                    fetch('http://localhost:19879/sale', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",

@@ -12,11 +12,21 @@ public class FortGraphBergServer implements FBLogger {
 
     public static void startServer() throws IOException {
         final var server = HttpServer.create(new InetSocketAddress(19879), 0);
-        server.createContext("/", (exchange) -> {
+        server.createContext("/sale", (exchange) -> {
             exchange.sendResponseHeaders(200, 0);
             try (final var is = exchange.getRequestBody()) {
                 final var payload = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-                log.info("MoySklad data:\n" + payload);
+                log.info("MoySklad sale:\n" + payload);
+            } catch (IOException e) {
+                log.log(Level.SEVERE, "Process request from Electron App failed", e);
+            }
+            exchange.close();
+        });
+        server.createContext("/products", (exchange) -> {
+            exchange.sendResponseHeaders(200, 0);
+            try (final var is = exchange.getRequestBody()) {
+                final var payload = new String(is.readAllBytes(), StandardCharsets.UTF_8);
+                log.info("MoySklad products:\n" + payload);
             } catch (IOException e) {
                 log.log(Level.SEVERE, "Process request from Electron App failed", e);
             }
