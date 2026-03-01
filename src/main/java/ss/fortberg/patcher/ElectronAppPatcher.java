@@ -29,7 +29,7 @@ public class ElectronAppPatcher implements FBLogger {
         final var indexHtml = new File(homeDir, "/resources/app/index.html");
         final var content = Files.readString(indexHtml.toPath());
         if (content.contains(TERMINAL_SCRIPT_REF)) {
-            log.info("index.html already patched... Skip...");
+            log.fine("index.html already patched... Skip...");
         } else {
             final var headCloseIdx = content.indexOf("</head>");
             final var newContent = content.substring(0, headCloseIdx) + TERMINAL_SCRIPT_REF + content.substring(headCloseIdx);
@@ -50,7 +50,7 @@ public class ElectronAppPatcher implements FBLogger {
             Files.writeString(jsFile.toPath(), content, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
             log.info("'ikassa.js' successfully patched...");
         } else {
-            log.info("ikassa.js already patched... Skip...");
+            log.fine("ikassa.js already patched... Skip...");
         }
     }
 
@@ -58,7 +58,7 @@ public class ElectronAppPatcher implements FBLogger {
         final var rendererFile = new File(homeDir, "/resources/app/renderer.js");
         final var content = Files.readString(rendererFile.toPath());
         if (content.contains(TERMINAL_RESPONSE_INTERCEPTOR_REF)) {
-            log.info("renderer.js already patched... Skip...");
+            log.fine("renderer.js already patched... Skip...");
         } else {
             final var idx = content.indexOf(MAKE_REQUEST_REF);
             final var secondPart = content.substring(idx);

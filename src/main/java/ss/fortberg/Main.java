@@ -4,7 +4,6 @@ import ss.fortberg.patcher.ElectronAppPatcher;
 import ss.fortberg.server.FortGraphBergServer;
 import ss.fortberg.ssdp.SsdpDiscovery;
 import ss.fortberg.terminal.SmartX;
-import ss.fortberg.util.Externalizator;
 import ss.fortberg.util.LoggingConfiguration;
 
 import java.io.IOException;
@@ -15,9 +14,9 @@ public class Main {
         LoggingConfiguration.init();
         FortGraphBergServer.startServer();
         ElectronAppPatcher.patchAll();
-        SsdpDiscovery.start();
-        if (Externalizator.getTerminalIp() != null) {
-            SmartX.createNew(Externalizator.getTerminalIp());
+        final var location = SsdpDiscovery.discoverDevices();
+        if (location != null) {
+            SmartX.createNew(location);
             SmartX.getInstance().info();
         }
     }
