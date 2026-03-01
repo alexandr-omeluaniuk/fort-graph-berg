@@ -27,6 +27,7 @@ java {
 
 application {
     mainClass.set("ss.fortberg.Main")
+    mainModule.set("fortberg.main")
 }
 
 jlink {
