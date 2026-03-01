@@ -29,4 +29,8 @@ public class Externalizator implements FBLogger {
     public static String getMoySkladHomeDir() {
         return props.getProperty("moy.sklad.home.dir");
     }
+
+    public static String getTerminalIp() {
+        return props.getProperty("terminal.ip");
+    }
 }

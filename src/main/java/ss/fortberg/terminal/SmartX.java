@@ -33,6 +33,7 @@ public class SmartX implements FBLogger {
 
     public static void createNew(String location) throws IOException, InterruptedException {
         current = new SmartX(location);
+        log.info("Terminal created for address [" + location + "]");
     }
 
     public static SmartX getInstance() {
@@ -42,6 +43,11 @@ public class SmartX implements FBLogger {
     private SmartX(String location) throws IOException, InterruptedException {
         rootUrl = location;
         client = HttpClient.newBuilder().build();
+    }
+
+    public void info() {
+        String info = withAuth("OTHER_INFO", null, String.class);
+        log.info("Terminal info: " + info);
     }
 
     public void sale(SaleRequest request) {
@@ -118,7 +124,7 @@ public class SmartX implements FBLogger {
                 return objectMapper.readValue(response.body(), responseType);
             }
         } catch (Exception e) {
-            log.log(Level.SEVERE, "Terminal request error: ${e.message}", e);
+            log.log(Level.SEVERE, "Terminal request error: " + e.getMessage(), e);
             return null;
         }
     }
