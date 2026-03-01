@@ -48,6 +48,6 @@ public class DataStorage implements FBLogger {
         assortment.rows().forEach(item -> {
             productsMap.put(item.id(), item);
         });
-        log.info("Products added: " + assortment.rows().toString());
+        log.fine("Products added: " + assortment.rows().toString());
     }
 }

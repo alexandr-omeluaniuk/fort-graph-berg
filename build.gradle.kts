@@ -32,7 +32,7 @@ application {
 
 jlink {
     launcher {
-        name = "FortGraphBerg"
+        name = "FortBerg"
     }
     jvmVersion = 23
     javaHome = "C:\\MinecraftServer\\jdk-23.0.2"
