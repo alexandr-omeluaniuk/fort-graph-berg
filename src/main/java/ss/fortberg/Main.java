@@ -3,6 +3,7 @@ package ss.fortberg;
 import ss.fortberg.patcher.ElectronAppPatcher;
 import ss.fortberg.server.FortGraphBergServer;
 import ss.fortberg.ssdp.SsdpDiscovery;
+import ss.fortberg.storage.DataStorage;
 import ss.fortberg.terminal.SmartX;
 import ss.fortberg.util.LoggingConfiguration;
 
@@ -14,6 +15,7 @@ public class Main {
         LoggingConfiguration.init();
         FortGraphBergServer.startServer();
         ElectronAppPatcher.patchAll();
+        DataStorage.getInstance();
         final var location = SsdpDiscovery.discoverDevices();
         if (location != null) {
             SmartX.createNew(location);
