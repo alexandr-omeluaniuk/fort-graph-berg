@@ -98,7 +98,7 @@ public class SmartX implements FBLogger {
             } else {
                 payloadStr = "";
             }
-            log.info("Terminal request:\n$payloadStr");
+            log.fine("Terminal request:\n$payloadStr");
             final var request = HttpRequest.newBuilder().uri(URI.create(rootUrl + "/v1"))
                 .header("Content-Type", "application/json")
                 .header("INTENT_OPERATION_TYPE", intent)
@@ -107,7 +107,11 @@ public class SmartX implements FBLogger {
                 request.header("Auth-token", accessToken);
             }
             final var response = client.send(request.build(), HttpResponse.BodyHandlers.ofString());
-            log.info("Terminal response [${response.statusCode()}]:\n${response.body()}");
+            if (response.statusCode() == 401) {
+                accessToken = null;
+                return withAuth(intent, payload, responseType);
+            }
+            log.fine("Terminal response [${response.statusCode()}]:\n${response.body()}");
             if (responseType == String.class) {
                 return (T) response.body();
             } else {

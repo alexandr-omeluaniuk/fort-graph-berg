@@ -22,7 +22,7 @@ public class FortGraphBergServer implements FBLogger {
             exchange.sendResponseHeaders(200, 0);
             try (final var is = exchange.getRequestBody()) {
                 final var payload = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-                log.info("MoySklad retail:\n" + payload);
+                log.fine("MoySklad retail:\n" + payload);
                 final RetailInfo retailInfo = JsonUtils.objectMapper.readValue(payload, RetailInfo.class);
                 DataStorage.getInstance().setCashiers(retailInfo);
             } catch (IOException e) {
@@ -34,9 +34,8 @@ public class FortGraphBergServer implements FBLogger {
             exchange.sendResponseHeaders(200, 0);
             try (final var is = exchange.getRequestBody()) {
                 final var payload = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-                log.info("MoySklad sale:\n" + payload);
+                log.fine("MoySklad sale:\n" + payload);
                 final SaleRequest request = JsonUtils.objectMapper.readValue(payload, SaleRequest.class);
-                log.info(request.toString());
                 SmartX.getInstance().sale(request);
             } catch (IOException e) {
                 log.log(Level.SEVERE, "Process request from Electron App failed", e);
@@ -47,7 +46,7 @@ public class FortGraphBergServer implements FBLogger {
             exchange.sendResponseHeaders(200, 0);
             try (final var is = exchange.getRequestBody()) {
                 final var payload = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-                log.info("MoySklad products:\n" + payload);
+                log.fine("MoySklad products:\n" + payload);
                 final Assortment assortment = JsonUtils.objectMapper.readValue(payload, Assortment.class);
                 DataStorage.getInstance().setProducts(assortment);
             } catch (IOException e) {
