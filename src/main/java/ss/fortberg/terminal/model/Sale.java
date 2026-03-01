@@ -10,9 +10,6 @@ public record Sale(
     BigDecimal cash,
     BigDecimal cashless,
     BigDecimal certificate,
-    BigDecimal oplati,
-
-    String prefix,
-    String suffix
+    BigDecimal oplati
 ) {
 }

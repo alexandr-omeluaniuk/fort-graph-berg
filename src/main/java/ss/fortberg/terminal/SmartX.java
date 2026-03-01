@@ -76,9 +76,7 @@ public class SmartX implements FBLogger {
             cash,
             cashless,
             new BigDecimal(0),
-            new BigDecimal(0),
-            "",
-            ""
+            new BigDecimal(0)
         );
         log.info("Sale request: " + sale);
         final var response = withAuth("SALE", sale, String.class);
