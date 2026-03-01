@@ -37,7 +37,7 @@ public class FortGraphBergServer implements FBLogger {
                 log.fine("MoySklad sale:\n" + payload);
                 final SaleRequest request = JsonUtils.objectMapper.readValue(payload, SaleRequest.class);
                 SmartX.getInstance().sale(request);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 log.log(Level.SEVERE, "Process request from Electron App failed", e);
             }
             exchange.close();

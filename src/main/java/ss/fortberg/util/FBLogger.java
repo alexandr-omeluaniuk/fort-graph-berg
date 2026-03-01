@@ -4,5 +4,5 @@ import java.util.logging.Logger;
 
 public interface FBLogger {
 
-    Logger log = Logger.getLogger(FBLogger.class.getName());
+    Logger log = Logger.getLogger("fb");
 }
