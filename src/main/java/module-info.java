@@ -3,4 +3,5 @@ module fortberg.main {
     requires java.logging;
     requires jdk.httpserver;
     requires java.net.http;
+    exports ss.fortberg;
 }

@@ -1,5 +1,5 @@
 plugins {
-    id("org.beryx.jlink") version "2.24.1"
+    id("org.beryx.jlink") version "3.1.1"
     application
 }
 
@@ -31,8 +31,14 @@ application {
 
 jlink {
     launcher {
-        name = "Fort GraphBerg"
+        name = "FortGraphBerg"
     }
     jvmVersion = 23
-    javaHome = "/home/alex/.jdks/openjdk-23.0.2"
+    javaHome = "C:\\MinecraftServer\\jdk-23.0.2"
+    jpackage {
+        imageOptions.apply {
+            add("--win-console")
+            icon = "src/main/resources/icons/carrot-solid-full.ico"
+        }
+    }
 }
