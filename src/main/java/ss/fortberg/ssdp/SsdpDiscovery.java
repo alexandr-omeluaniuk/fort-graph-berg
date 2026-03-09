@@ -27,7 +27,7 @@ public class SsdpDiscovery implements FBLogger {
         // Use a DatagramSocket for sending and receiving unicast responses
         try (DatagramSocket socket = new DatagramSocket()) {
             socket.setReuseAddress(true);
-            socket.setSoTimeout(5000); // Set a timeout for receiving responses (5 seconds)
+            socket.setSoTimeout(60000); // Set a timeout for receiving responses (5 seconds)
 
             DatagramPacket sendPacket = new DatagramPacket(
                 SSDP_SEARCH_MESSAGE.getBytes(),

@@ -53,8 +53,8 @@ public class SmartX implements FBLogger {
     public void sale(SaleRequest request) {
         final var ds = DataStorage.getInstance();
         final var cashier = ds.getCashier(request.owner().meta().id());
-        final var cash = new BigDecimal(request.cashSum() / 100).setScale(2, RoundingMode.HALF_UP);
-        final var cashless = new BigDecimal(request.noCashSum() / 100).setScale(2, RoundingMode.HALF_UP);
+        final var cash = new BigDecimal(Double.valueOf(request.cashSum()) / 100).setScale(2, RoundingMode.HALF_UP);
+        final var cashless = new BigDecimal(Double.valueOf(request.noCashSum()) / 100).setScale(2, RoundingMode.HALF_UP);
         final var sale = new Sale(
             cashier == null ? "Кассир" : cashier.lastname(),
             request.positions().stream().map(pos -> {
