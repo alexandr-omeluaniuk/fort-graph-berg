@@ -16,6 +16,13 @@ public class ElectronAppPatcher implements FBLogger {
     private static final String TERMINAL_RESPONSE_INTERCEPTOR_REF = "iKassaTerminal.intercept(data, response.clone());\n\t\t\t\t";
     private static final String RETURN_RESPONSE_REF = "return response;";
 
+    private static final String CUSTOM_CSS = """
+        <style>
+            [data-test="menu-history"] {
+                display: none !important;
+            }
+        </style>""";
+
     public static void patchAll() throws IOException {
         final var homeDir = Externalizator.getMoySkladHomeDir();
         if (homeDir != null && !homeDir.isBlank()) {
@@ -32,7 +39,10 @@ public class ElectronAppPatcher implements FBLogger {
             log.fine("index.html already patched... Skip...");
         } else {
             final var headCloseIdx = content.indexOf("</head>");
-            final var newContent = content.substring(0, headCloseIdx) + TERMINAL_SCRIPT_REF + content.substring(headCloseIdx);
+            final var newContent = content.substring(0, headCloseIdx) +
+                TERMINAL_SCRIPT_REF +
+                CUSTOM_CSS +
+                content.substring(headCloseIdx);
             Files.writeString(indexHtml.toPath(), newContent);
             log.info("index.html successfully patched...");
         }
