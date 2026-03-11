@@ -1,5 +1,6 @@
 package ss.fortberg.server;
 
+import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpServer;
 import ss.fortberg.server.model.Assortment;
 import ss.fortberg.server.model.RetailInfo;
@@ -31,14 +32,25 @@ public class FortGraphBergServer implements FBLogger {
             exchange.close();
         });
         server.createContext("/sale", (exchange) -> {
-            exchange.sendResponseHeaders(200, 0);
+//            try {
+//                Thread.sleep(10000);
+//            } catch (InterruptedException e) {
+//                throw new RuntimeException(e);
+//            }
             try (final var is = exchange.getRequestBody()) {
                 final var payload = new String(is.readAllBytes(), StandardCharsets.UTF_8);
                 log.fine("MoySklad sale:\n" + payload);
                 final SaleRequest request = JsonUtils.objectMapper.readValue(payload, SaleRequest.class);
                 SmartX.getInstance().sale(request);
+                exchange.sendResponseHeaders(200, 0);
             } catch (Exception e) {
                 log.log(Level.SEVERE, "Process request from Electron App failed", e);
+                Headers headers = exchange.getResponseHeaders();
+                headers.add("Content-Type", "text/plain; charset=UTF-8");
+                final var responseBytes = ("Ошибка: " + e.getMessage()).getBytes(StandardCharsets.UTF_8);
+                exchange.sendResponseHeaders(500, responseBytes.length);
+                exchange.getResponseBody().write(responseBytes);
+                exchange.getResponseBody().close();
             }
             exchange.close();
         });

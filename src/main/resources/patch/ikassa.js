@@ -1,7 +1,22 @@
 class iKassaTerminal {
 
-    static intercept(data, response) {
-        new Promise(async (resolve, reject) => {
+    static async preSaleHook(data) {
+        if (data.url.indexOf('/api/posap/1.0/entity/retaildemand') !== -1 && data.method === 'POST') {
+            const resp = await fetch('http://localhost:19879/sale', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: data.body
+            });
+            if (!resp.ok) {
+                alert("Ошибка при оплате через терминал. Повторите попытку");
+                throw Error('SmartX error');
+            }
+        }
+    }
+
+    static async intercept(data, response) {
             try {
                 if (data.url.indexOf('/api/posap/1.0/settings/retailstore') !== -1) {
                     const txt = await response.text();
@@ -12,7 +27,7 @@ class iKassaTerminal {
                         },
                         body: txt
                     }).then(resp => {
-                        console.log(resp.status);
+                        console.log("Retail save result: " + resp.status);
                     });
                 } else if (data.url.indexOf('/api/posap/1.0/entity/assortment') !== -1) {
                     const txt = await response.text();
@@ -23,23 +38,12 @@ class iKassaTerminal {
                         },
                         body: txt
                     }).then(resp => {
-                        console.log(resp.status);
-                    });
-                } else if (data.url.indexOf('/api/posap/1.0/entity/retaildemand') !== -1 && data.method === 'POST') {
-                    fetch('http://localhost:19879/sale', {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: data.body
-                    }).then(resp => {
-                        console.log(resp.status);
+                        console.log("Products save result: " + resp.status);
                     });
                 }
             } catch (e) {
                 console.warn('Kassa interceptor error')
                 console.warn(e);
             }
-        }).then(() => console.log('Completed'));
     }
 }

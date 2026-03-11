@@ -14,6 +14,7 @@ public class ElectronAppPatcher implements FBLogger {
     private static final String TERMINAL_SCRIPT_REF = "<script src=\"./ikassa.js\"></script>";
     private static final String MAKE_REQUEST_REF = "makeRequest(data) {";
     private static final String TERMINAL_RESPONSE_INTERCEPTOR_REF = "iKassaTerminal.intercept(data, response.clone());\n\t\t\t\t";
+    private static final String TERMINAL_PRE_SALE_HOOK_REF = "await iKassaTerminal.preSaleHook(data);\n\t\t\t";
     private static final String RETURN_RESPONSE_REF = "return response;";
 
     private static final String CUSTOM_CSS = """
@@ -29,6 +30,7 @@ public class ElectronAppPatcher implements FBLogger {
             patchIndexHtml(homeDir);
             patchTerminalJs(homeDir);
             patchRenderer(homeDir);
+            patchRenderer2(homeDir);
         }
     }
 
@@ -77,6 +79,20 @@ public class ElectronAppPatcher implements FBLogger {
             final var newContent = content.substring(0, idx2) + TERMINAL_RESPONSE_INTERCEPTOR_REF + content.substring(idx2);
             Files.writeString(rendererFile.toPath(), newContent);
             log.info("renderer.js successfully patched...");
+        }
+    }
+
+    private static void patchRenderer2(String homeDir) throws IOException {
+        final var rendererFile = new File(homeDir, "/resources/app/renderer.js");
+        final var content = Files.readString(rendererFile.toPath());
+        if (content.contains(TERMINAL_PRE_SALE_HOOK_REF)) {
+            log.fine("renderer.js already patched [2]... Skip...");
+        } else {
+            final var idx = content.indexOf(MAKE_REQUEST_REF) + MAKE_REQUEST_REF.length();
+            final var newContent = content.substring(0, idx) +
+                "\n" + TERMINAL_PRE_SALE_HOOK_REF + content.substring(idx);
+            Files.writeString(rendererFile.toPath(), newContent);
+            log.info("renderer.js successfully patched [2]...");
         }
     }
 }
