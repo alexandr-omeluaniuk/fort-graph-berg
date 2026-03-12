@@ -2,6 +2,13 @@ class iKassaTerminal {
 
     static async preSaleHook(data) {
         if (data.url.indexOf('/api/posap/1.0/entity/retaildemand') !== -1 && data.method === 'POST') {
+            const sale = JSON.parse(data.body);
+            const dateMoment = new Date(sale.moment);
+            const differenceMs = new Date() - dateMoment;
+            if (differenceMs > 10000) {
+                console.log('Exit by date');
+                return;
+            }
             const resp = await fetch('http://localhost:19879/sale', {
                 method: "POST",
                 headers: {
