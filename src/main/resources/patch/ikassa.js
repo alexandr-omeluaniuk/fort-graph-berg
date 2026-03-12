@@ -7,7 +7,7 @@ class iKassaTerminal {
             const differenceMs = new Date() - dateMoment;
             if (differenceMs > 10000) {
                 console.log('Exit by date');
-                return;
+                return true;
             }
             const resp = await fetch('http://localhost:19879/sale', {
                 method: "POST",
@@ -18,9 +18,10 @@ class iKassaTerminal {
             });
             if (!resp.ok) {
                 alert("Ошибка при оплате через терминал. Повторите попытку");
-                throw Error('SmartX error');
+                return false;
             }
         }
+        return true;
     }
 
     static async intercept(data, response) {

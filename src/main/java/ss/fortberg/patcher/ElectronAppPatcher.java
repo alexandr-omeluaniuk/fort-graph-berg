@@ -14,7 +14,7 @@ public class ElectronAppPatcher implements FBLogger {
     private static final String TERMINAL_SCRIPT_REF = "<script src=\"./ikassa.js\"></script>";
     private static final String MAKE_REQUEST_REF = "makeRequest(data) {";
     private static final String TERMINAL_RESPONSE_INTERCEPTOR_REF = "iKassaTerminal.intercept(data, response.clone());\n\t\t\t\t";
-    private static final String TERMINAL_PRE_SALE_HOOK_REF = "await iKassaTerminal.preSaleHook(data);\n\t\t\t";
+    private static final String TERMINAL_PRE_SALE_HOOK_REF = "const result = await iKassaTerminal.preSaleHook(data);\nif (!result) return new Response('', {status: 201});\n";
     private static final String RETURN_RESPONSE_REF = "return response;";
 
     private static final String CUSTOM_CSS = """
