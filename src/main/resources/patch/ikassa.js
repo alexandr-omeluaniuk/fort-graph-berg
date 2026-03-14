@@ -9,8 +9,24 @@ class iKassaTerminal {
                 console.log('Exit by date');
                 return true;
             }
+            const controller = new AbortController();
+            const modal = document.querySelector('.preloader-cont');
+            if (!modal) {
+                console.log('Exit by modal');
+                return false;
+            } else {
+                const cancelBtn = document.createElement('button');
+                cancelBtn.innerHTML = 'Отмена';
+                cancelBtn.style.marginTop = '100px';
+                cancelBtn.style.marginLeft = '20px';
+                cancelBtn.onclick = () => {
+                    controller.abort();
+                };
+                modal.prepend(cancelBtn);
+            }
             const resp = await fetch('http://localhost:19879/sale', {
                 method: "POST",
+                signal: controller.signal,
                 headers: {
                     "Content-Type": "application/json",
                 },

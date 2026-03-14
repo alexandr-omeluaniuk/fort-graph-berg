@@ -32,11 +32,11 @@ public class FortGraphBergServer implements FBLogger {
             exchange.close();
         });
         server.createContext("/sale", (exchange) -> {
-//            try {
-//                Thread.sleep(10000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
+            try {
+                Thread.sleep(100000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             try (final var is = exchange.getRequestBody()) {
                 final var payload = new String(is.readAllBytes(), StandardCharsets.UTF_8);
                 log.fine("MoySklad sale:\n" + payload);
